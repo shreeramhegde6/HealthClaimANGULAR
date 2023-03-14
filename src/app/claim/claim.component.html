@@ -1,0 +1,57 @@
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-xl-12 col-md-1 col-sm-1">
+
+                <div class="card bg-light">
+ 
+                    <h4 class="card-title mt-2 text-center">Claim Submission</h4>
+                    
+                    <article class="card-body mx-auto" style="max-width: 400px;">
+                        <div class="form-group input-group">
+                            <label><strong>Member Id :</strong></label>{{id}}
+                        </div> 
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i style="width: 90px;">Claim Type</i> </span>
+                            </div>
+                            <select class="form-select"  [(ngModel)]="ClaimDataModel.claimTypeId" [ngModelOptions]="{standalone: true}"  placeholder="Select Type" aria-label="Default select example">
+                                <option selected>Claim Type</option>
+                                <option *ngFor="let clm of ClaimTypeList"  
+                                        value={{clm.claimTypeId}}>  
+                                    {{clm.claimTypeValue}}  
+                                </option> 
+                            </select>
+                        </div> 
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i style="width: 90px;">Claim Amount</i> </span>
+                            </div>
+                            <input class="form-control" [(ngModel)]="ClaimDataModel.claimAmount" [ngModelOptions]="{standalone: true}"  placeholder="Enter Claim Amount" type="text">
+                           
+                        </div> 
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i style="width: 90px;">Claim Date</i> </span>
+                            </div>
+                            <input class="form-control"  [(ngModel)]="ClaimDataModel.claimDate" [ngModelOptions]="{standalone: true}"   placeholder="Enter Claim Date" type="date">
+                        </div> 
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i style="width: 90px;">Remarks</i> </span>
+                            </div>
+                            <input class="form-control"  [(ngModel)]="ClaimDataModel.claimRemark" [ngModelOptions]="{standalone: true}"  placeholder="Enter Remarks" type="text">
+                        </div> 
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary" > Cancel
+                            </button> &nbsp;
+                            <button type="submit" class="btn btn-primary"(click) ="AddClaim($event)" > Save
+                            </button>
+                            
+                        </div> 
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

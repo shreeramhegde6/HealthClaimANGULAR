@@ -1,0 +1,45 @@
+<div class="col-sm-12 text-right" >
+    <div >
+         <div>
+            <button type="submit"   (click)="SubmitClaim(memberId)" class="btn btn-primary">Submit claim </button>
+        </div> 
+    </div>
+</div>
+<div class="container-lg">
+    <div class="table-responsive">
+        <div class="table-wrapper col-lg-12 col-xl-12 col-md-1 col-sm-1">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-12 text-center"><h4>Member Details</h4></div>                    
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Member Id</td>
+                            <td>First Name</td>
+                            <td>Last Name</td>
+                            <td>Assigned Physician</td>
+                            <td>Claim Id </td>
+                            <td>Claim Amount</td>
+                            <td>Submitted Date</td>
+                          
+                    </tr>
+                </thead>
+               
+                        <tr *ngFor = "let mdata of MemberData">
+                            <td>{{mdata.memberId}}</td>
+                            <td>{{mdata.firstName}}</td>
+                            <td>{{mdata.lastName}}</td>
+                            <td>{{mdata.physicianName}}</td>
+                            <td>{{mdata.claimId==0?" ":mdata.claimId}}</td>
+                            <td>{{mdata.claimAmount==0?" ":mdata.claimAmount}}</td>
+                            <td>{{mdata.claimDate=="9999-09-09T00:00:00"?" ":mdata.claimDate | date: 'MM/dd/yyyy' }}</td>
+                              </tr>
+                        
+               
+            </table>
+        </div>
+    </div>
+</div>    
+ 
